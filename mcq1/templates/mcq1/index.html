@@ -1,0 +1,14 @@
+{% extends "mcq1/layout.html" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+<h1>This is the home page of the MCQ web application.</h1>
+{% for quiz in quizzes %}
+<div class='container'>
+    <li><b>{{ quiz.quiz_name|title }}</b><br> 
+    <strong>Topic:</strong>  {{ quiz.topic|title }}<br>
+    <strong>Created by:</strong>  <a href={% url 'profile' pk=quiz.author.user.pk %}>{{ quiz.author|title }}</a><br> 
+    <strong>Number of questions:</strong>  {{ quiz.no_ques }}<br>
+    <a href={% url 'take_quiz' pk=quiz.pk %}>Take Quiz</a><br><br> </li>
+</div>
+{% endfor %}
+{% endblock %}

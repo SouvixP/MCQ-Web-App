@@ -1,0 +1,29 @@
+{% extends "mcq1/layout.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+<div class='container'>
+    <br><br><strong>Username:</strong>  {{ user1.username|title }}<br> 
+    <strong>Email id:</strong>  {{ user1.email }}<br>
+    <strong>Position:</strong>  
+    {% if usr.is_teacher == True %}
+    Teacher<br><br>
+    {% if usr.quiz_set.all.exists %}
+    <strong>Quizzes created by {{ user1.username|title }} :</strong><br><br>
+    {% for quiz in usr.quiz_set.all %}
+    <div class='container'>
+        <li><b>{{ quiz.quiz_name|title }}</b><br> 
+        <strong>Topic:</strong>  {{ quiz.topic|title }}<br>
+        <strong>Number of questions:</strong>  {{ quiz.no_ques }}<br>
+        <a href={% url 'take_quiz' pk=quiz.pk %}>Take Quiz</a><br><br> </li>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h2>{{ user1.username|title }} has not created any quizzes.</h2>
+    {% endif %}
+    {% else %}
+    Student<br>
+    {% endif %} 
+    
+</div>
+{% endblock %}

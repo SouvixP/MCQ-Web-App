@@ -1,0 +1,20 @@
+{% extends 'mcq1/layout.html' %}
+{% block title %}Create Quiz{% endblock %}
+{% block content %}
+<h1>Create a Quiz....</h1>
+<div class='jumbotron'>
+<form action={% url 'create_quiz' %} method='POST'>
+    {% csrf_token %} 
+    <label for='name'>Name of the Quiz:</label>
+    <input type='text' name="name" placeholder="Enter Name"><br>
+
+    <label for='topic'>Topic of the Quiz:</label>
+    <input type='text' name="topic" placeholder="Enter Topic"><br>
+
+    <label for='no_ques'>Number of questions:</label>
+    <input type='number' name="no_ques"><br>
+
+    <button type='submit' name='Start'>Start</button>
+</form>
+</div>
+{% endblock %}

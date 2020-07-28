@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <a href='/'>Home</a><br>
+        <a href='/about/'>About</a><br>
+        
+        {% if user.is_authenticated %}
+        <a href={% url 'profile' pk=user.pk %}>{{ user.username|title }}</a><br>
+        {% else %}
+        <a href='/register/'>Register</a><br>
+        {% endif %}
+        
+        {% if user.is_authenticated %}
+        <a href='/logout/'>Logout</a><br>
+        {% else %}
+        <a href='/login/'>Login</a><br>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <a href='/create_quiz/'>Create a quiz</a><br>
+        <a href='/edit_quiz/'>Edit a quiz</a><br>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
