@@ -1,0 +1,51 @@
+.navbar {
+    background-color: black;
+    border-radius: 25px;
+}
+
+.navbar ul {
+    overflow: auto;
+}
+
+.navbar li {
+    float: left;
+    list-style: none;
+    margin: 15px 20px;
+}
+
+.navbar li a {
+    padding: 3px 3px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li a:hover {
+    color: grey;
+}
+
+.content {
+    margin-left: 15px;
+}
+
+.quiz_item {
+    background-color: whitesmoke;
+    margin-top: 5px;
+    padding: 3px;
+    padding-left: 15px;
+    padding-top: 15px;
+    border-radius: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.quiz_item li {
+    list-style: none;
+}
+
+.quiz_name {
+    font-size: larger;
+}
+
+#quiz_list {
+    display: grid;
+}

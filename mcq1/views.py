@@ -138,6 +138,7 @@ def take_quiz(request, pk):
     else:
         return HttpResponse('<h1>Login required to take the quiz bro!!</h1>')
 
+
 def attempt_ques(request,pk):
     counter = request.session['counter']
     quiz = Quiz.objects.get(pk=pk)

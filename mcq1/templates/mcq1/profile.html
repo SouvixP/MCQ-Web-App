@@ -10,14 +10,16 @@
     Teacher<br><br>
     {% if usr.quiz_set.all.exists %}
     <strong>Quizzes created by {{ user1.username|title }} :</strong><br><br>
+    <div id="quiz_list">
     {% for quiz in usr.quiz_set.all %}
-    <div class='container'>
-        <li><b>{{ quiz.quiz_name|title }}</b><br> 
+    <div class='container quiz_item'>
+        <li><div class="quiz_name"><b>{{ quiz.quiz_name|title }}</b></div><br>
         <strong>Topic:</strong>  {{ quiz.topic|title }}<br>
         <strong>Number of questions:</strong>  {{ quiz.no_ques }}<br>
         <a href={% url 'take_quiz' pk=quiz.pk %}>Take Quiz</a><br><br> </li>
     </div>
     {% endfor %}
+    </div>
     {% else %}
     <h2>{{ user1.username|title }} has not created any quizzes.</h2>
     {% endif %}
