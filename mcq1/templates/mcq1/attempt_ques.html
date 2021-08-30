@@ -2,34 +2,29 @@
 {% block title %}Take Quiz{% endblock %}
 {% block content %}
 {% comment %} <h1>Create a Quiz....</h1> {% endcomment %}
-<div class='jumbotron'>
+<div class='container2'>
 <form action={% url 'attempt_ques' pk=pk %} method='POST'>
     {% csrf_token %} 
     <br>
-    <h3>Marks for correct answer: {{ ques.mrk_correct }}</h3>
-    <h3>Marks for incorrect answer: {{ ques.neg_mrk }}</h3>
+    <div>Marks for correct answer: {{ ques.mrk_correct }}</div>
+    <div>Marks for incorrect answer: {{ ques.neg_mrk }}</div>
     {% comment %} <h3>correct answer: {{ ques.cor_choice }}</h3> {% endcomment %}
-    <h3>Score till now: {{ score }}</h3>
-    <br>
-    <br>
-    <label for='question'><h2>Question: {{ ques.question }}</h2></label>
+    <h3>Score till now: <text>{{ score }}<text></h3>
+    <label for='question'><h3>Question: {{ ques.question }}</h3></label>
     {% comment %} <input type='text' name="question" placeholder="Enter Question"><br> {% endcomment %}
-    <br>
-    <br>
     <input type="radio" id="choice1" name="marked" value='{{ ques.choice1 }}'>
-    <label for="choice1">{{ ques.choice1 }}</label><br>
+    <label for="choice1">{{ ques.choice1 }}</label><br><br>
 
     <input type="radio" id="choice2" name="marked" value='{{ ques.choice2 }}'>
-    <label for="choice2">{{ ques.choice2 }}</label><br>
+    <label for="choice2">{{ ques.choice2 }}</label><br><br>
 
     <input type="radio" id="choice3" name="marked" value='{{ ques.choice3 }}'>
-    <label for="choice3">{{ ques.choice3 }}</label><br>
+    <label for="choice3">{{ ques.choice3 }}</label><br><br>
 
     <input type="radio" id="choice4" name="marked" value='{{ ques.choice4 }}'>
-    <label for="choice4">{{ ques.choice4 }}</label><br>
-    <br>
+    <label for="choice4">{{ ques.choice4 }}</label><br><br>
 
-    {{ counter }}<br>
+    {{ counter }} questions done<br><br>
 
     {% if flg == 1 %}
     <button type='submit' name='next'>Next</button>

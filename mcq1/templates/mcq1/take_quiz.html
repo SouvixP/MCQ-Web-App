@@ -1,8 +1,8 @@
 {% extends "mcq1/layout.html" %}
 {% block title %}Score{% endblock %}
 {% block content %}
-<h1>You scored {{ score }} out of {{ total }} marks.</label></h1>
 <div class='jumbotron'>
+<h2>You scored <text>{{ score }} out of {{ total }}</text> marks.</label></h2>
 <form action={% url 'show_score' %} method='POST'>
     {% csrf_token %} 
     <button type='submit' name='okay'>OK</button>

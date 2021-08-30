@@ -13,7 +13,7 @@
         <li><div class="quiz_name"><b>{{ quiz.quiz_name|title }}</b></div><br>
         <strong>Topic:</strong>  {{ quiz.topic|title }}<br>
         <strong>Number of questions:</strong>  {{ quiz.no_ques }}<br>
-        <a href={% url 'edit_quiz_pk' pk=quiz.pk %}>Edit Quiz</a><br><br> </li>
+        <button type='button' class="quiz_btn"><a href={% url 'edit_quiz_pk' pk=quiz.pk %}>Edit Quiz</a></button><br><br> </li>
     </div>
     {% endfor %}
     </div>

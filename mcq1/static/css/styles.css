@@ -1,3 +1,4 @@
+
 .navbar {
     background-color: black;
     border-radius: 25px;
@@ -29,13 +30,17 @@
 
 .quiz_item {
     background-color: whitesmoke;
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 30px;
     padding: 3px;
     padding-left: 15px;
     padding-top: 15px;
     border-radius: 20px;
-    width: 30%;
+    width: 21%;
     text-align: center;
+    vertical-align: middle;
+    float: left;
 }
 
 .quiz_item li {
@@ -46,6 +51,59 @@
     font-size: larger;
 }
 
-#quiz_list {
-    display: grid;
+
+#quiz_list li {
+    list-style: none;
+}
+
+.quiz_btn {
+    background-color: beige;
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 20px;
+}
+
+.quiz_btn a {
+    text-decoration: none;
+    color: black;
+}
+
+.jumbotron {
+    text-align: center;
+    margin: 30%;
+    margin-top: 20px;
+    padding: 20px;
+    padding-bottom: 40px;
+    background-color: whitesmoke;
+    border: 7px;
+    border-color: black;
+}
+
+.container1 {
+    text-align: left;
+    margin: 30%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: whitesmoke;
+    border: 7px;
+    border-color: black;
+}
+
+.container2 {
+    text-align: left;
+    margin: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    padding-bottom: 16%;
+    background-color: whitesmoke;
+    border: 7px;
+    border-color: black;
+}
+
+text {
+    color: green;
+}
+
+text1 {
+    font-size: x-large;
 }
